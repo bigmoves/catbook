@@ -46,6 +46,14 @@
  */
 
 /**
+ * Ember's RSVP Promise class
+ *
+ * @name external:Ember.RSVP.Promise
+ * @class
+ * @see {@link http://emberjs.com/api/classes/RSVP.Promise.html}
+ */
+
+/**
  * The instance of Ember.Application used throughout the app
  *
  * @namespace
