@@ -13,6 +13,9 @@
     "tests"
   ],
   "devDependencies": {
-    "hs-ui-core": "tools.healthsparq.com:/app/git_repos/uicore.git"
+    "hs-ui-core": "tools.healthsparq.com:/app/git_repos/uicore.git",
+    "firebase": "~2.2.7",
+    "emberfire": "~1.4.7",
+    "ember-data": "1.0.0-beta.18"
   }
 }

@@ -38,6 +38,14 @@
  */
 
 /**
+ * Ember Data's Model class
+ *
+ * @name external:DS.Model
+ * @class
+ * @see {@link http://emberjs.com/api/data/classes/DS.Model.html}
+ */
+
+/**
  * The instance of Ember.Application used throughout the app
  *
  * @namespace
