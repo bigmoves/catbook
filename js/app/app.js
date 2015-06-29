@@ -22,6 +22,22 @@
  */
 
 /**
+ * Ember's Service class
+ *
+ * @name external:Ember.Service
+ * @class
+ * @see {@link http://emberjs.com/api/classes/Ember.Service.html}
+ */
+
+/**
+ * Ember's Controller class
+ *
+ * @name external:Ember.Controller
+ * @class
+ * @see {@link http://emberjs.com/api/classes/Ember.Controller.html}
+ */
+
+/**
  * The instance of Ember.Application used throughout the app
  *
  * @namespace
@@ -29,20 +45,3 @@
  * @extends external:Ember.Application
  */
 App = Ember.Application.create();
-
-App.Router.map(function() {
-  // put your routes here
-});
-
-/**
- * An Ember route for the application itself
- *
- * @memberof App
- * @constructor
- * @extends external:Ember.Route
- */
-App.ApplicationRoute = Ember.Route.extend({
-  model: function() {
-    return ['red', 'yellow', 'blue'];
-  }
-});
