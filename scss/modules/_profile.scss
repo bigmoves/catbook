@@ -11,12 +11,8 @@
 }
 .wrap {
   margin-top: -50px;
-
+  .about {}
   .profile-photo {
-
-    .about {
-      
-    }
 
     img {
       border: 5px solid #fff;
@@ -27,6 +23,5 @@
       text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
       font-size: 28px;
     } 
-
   }
 }
