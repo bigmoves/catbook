@@ -5,7 +5,7 @@
  * @constructor
  * @extends external:Ember.Controller
  */
-App.IndexController = Ember.Controller.extend({
+App.ApplicationController = Ember.Controller.extend({
   /**
    * Inject the auth service
    *
@@ -23,5 +23,5 @@ App.IndexController = Ember.Controller.extend({
    */
   isLoggedIn: Ember.computed.oneWay('auth.isLoggedIn')
 
-  
+
 });
