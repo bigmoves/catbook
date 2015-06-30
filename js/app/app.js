@@ -45,6 +45,14 @@
  * @see {@link http://emberjs.com/api/data/classes/DS.Model.html}
  */
 
+ /**
+  * Ember's Mixin class
+  *
+  * @name external:Ember.Mixin
+  * @class
+  * @see {@link http://emberjs.com/api/data/classes/Ember.Mixin.html}
+  */
+
 /**
  * Ember's RSVP Promise class
  *
@@ -61,10 +69,3 @@
  * @extends external:Ember.Application
  */
 App = Ember.Application.create();
-
-(function() {
-
-  var inflector = Ember.Inflector.inflector;
-
-  inflector.uncountable('activity');
-})();

@@ -14,6 +14,10 @@ App.User = DS.Model.extend({
   }),
   email: DS.attr(),
   firstName: DS.attr(),
+  fullName: Ember.computed('firstName', 'lastName', function() {
+    
+    return this.get('firstName') + ' ' + this.get('lastName');
+  }),
   lastName: DS.attr(),
   likes: DS.hasMany('like', {
     async: true

@@ -1,3 +1,6 @@
+// Update Ember's inflection rules for this model
+Ember.Inflector.inflector.uncountable('activity');
+
 /**
  * The activity model
  * 
