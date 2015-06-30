@@ -1,44 +1,78 @@
 App.ChatSidebarComponent =  Ember.Component.extend({
+  /**
+   * Boolean for whether chat sidebar is active
+   *
+   * @type {boolean}
+   */
   isActive: false,
-  currentInput: '',
-  store: Ember.computed(function() {
-    return this.get('container').lookup('store:main');
-  }),
 
+  /**
+   * Current value for chat sidebar input
+   *
+   * @type {string}
+   */
+  currentInput: '',
+
+  /**
+   * Current authentication status
+   *
+   * @type {Object}
+   */
+  auth: Ember.inject.service(),
+
+  /**
+   * Ensure most recent message is displayed when element is inserted
+   *
+   * @memberof App.ChatSidebar
+   * @instance
+   */
   didInsertElement: function() {
-    // Set up css transition listener to scrollMessages
-    var _this = this;
-    $('.js-chat-sidebar').on('transitionend', _this.scrollMessages);
+    // Ensure messages default to most recent
+    $('.js-chat-messages').scrollTop(9999);
   },
 
+  /**
+   * Scroll to most recent message in chat box
+   *
+   * @memberof App.ChatSidebarComponent
+   * @instance
+   */
   scrollMessages: function() {
     var messages = $('.js-chat-messages');
-    var height = messages.height();
-    messages.scrollTop(height);
+    var height = messages.prop('scrollHeight');
+    messages.animate({ scrollTop: height}, 200);
   },
 
   actions: {
+    /**
+     * Toggle the active status of the chat sidebar
+     *
+     * @memberof App.ChatSidebar
+     * @instance
+     */
     toggleChat: function() {
       this.toggleProperty('isActive');
     },
 
+    /**
+     * Post user message to Firebase
+     *
+     * @memberof App.ChatSidebar
+     * @instance
+     */
     postMessage: function() {
       var store = this.get('store');
       var message = this.get('currentInput');
-      var _this = this;
+      var user = this.get('auth.currentUser');
       
-      store.find('user', 1).then(function(resp) {
-        // Send This to FireBase
-        var newMessage = store.createRecord('chat', {
-          user: resp,
-          message: message
-        });
-        newMessage.save().then(function() {
-          _this.scrollMessages();
-        });
+      var newMessage = store.createRecord('chat', {
+        user: user,
+        message: message
+      });
+      newMessage.save();
 
-        _this.set('currentInput', '');
-      }); // Change to correct signed in user
+      this.scrollMessages();
+      this.set('currentInput', '');
     }
   }
 });
