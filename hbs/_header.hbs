@@ -1,6 +1,6 @@
 <header class="row">
   <div class="row">
-  	<div class="small-3 small-centered columns"><h1>Catbook</h1></div>
+  	<div class="small-3 small-centered columns catbook"><h1>Catbook</h1></div>
 	</div>
 </header>
 
@@ -21,6 +21,10 @@
 
       <ul class="left">
         <li class="name"><h2>{{#link-to "messages"}}Messages{{/link-to}}</h2></li>
+      </ul>
+
+      <ul class="right">
+        <li {{action "logout"}} class="name"><h2 class="name top-bar-logout">Log Out</h2></li>
       </ul>
     </div>
   </nav>
