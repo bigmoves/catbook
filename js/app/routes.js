@@ -6,7 +6,9 @@ App.Router.map(function() {
 
   this.route('messages');
 
-  this.route('profile');
+  this.route('profile', {
+  	path: '/profile/:user_id'
+  });
 
   this.route('sign-up');
 
