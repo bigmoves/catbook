@@ -4,6 +4,19 @@ App.ChatSidebarComponent =  Ember.Component.extend({
   store: Ember.computed(function() {
     return this.get('container').lookup('store:main');
   }),
+
+  didInsertElement: function() {
+    // Set up css transition listener to scrollMessages
+    var _this = this;
+    $('.js-chat-sidebar').on('transitionend', _this.scrollMessages);
+  },
+
+  scrollMessages: function() {
+    var messages = $('.js-chat-messages');
+    var height = messages.height();
+    messages.scrollTop(height);
+  },
+
   actions: {
     toggleChat: function() {
       this.toggleProperty('isActive');
@@ -20,7 +33,9 @@ App.ChatSidebarComponent =  Ember.Component.extend({
           user: resp,
           message: message
         });
-        newMessage.save();
+        newMessage.save().then(function() {
+          _this.scrollMessages();
+        });
 
         _this.set('currentInput', '');
       }); // Change to correct signed in user
