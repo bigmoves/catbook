@@ -1,7 +1,7 @@
 <a {{action "like" item}}>Like</a>
 
-<span data-dropdown="like-{{elementId}}" aria-controls="like={{elementId}}" aria-expanded="false">
-  ({{likes.length}})
+<span class="like-count" data-dropdown="like-{{elementId}}" aria-controls="like={{elementId}}" aria-expanded="false">
+  (<span class="like-count-number">{{likes.length}}</span>)
 </span>
 
 <div id="like-{{elementId}}" class="f-dropdown content" data-dropdown-content aria-hidden="true" tabindex="-1">

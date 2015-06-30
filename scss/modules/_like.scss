@@ -1,0 +1,13 @@
+.like-count {
+  cursor: default;
+}
+
+.like-count-number {
+  border-bottom: 1px solid $anchor-font-color;
+  color: $anchor-font-color;
+  display: inline-block;
+
+  &:hover {
+    color: $anchor-font-color-hover;
+  }
+}
