@@ -6,15 +6,14 @@ App.ChatSidebarComponent =  Ember.Component.extend({
   }),
 
   didInsertElement: function() {
-    // Set up css transition listener to scrollMessages
-    var _this = this;
-    $('.js-chat-sidebar').on('transitionend', _this.scrollMessages);
+    // Ensure messages default to most recent
+    $('.js-chat-messages').scrollTop(999);
   },
 
   scrollMessages: function() {
     var messages = $('.js-chat-messages');
     var height = messages.height();
-    messages.scrollTop(height);
+    messages.animate({ scrollTop: height}, 250);
   },
 
   actions: {
