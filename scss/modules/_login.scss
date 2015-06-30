@@ -1,3 +1,13 @@
 .login-form {
-  margin: 100px 0;
+  margin: 100px 15px;
+}
+
+.login-form.sign-up {
+  p, h3 {
+    text-align: center;
+  }
+}
+
+.login-sign-up {
+  margin-top: 60px;
 }
