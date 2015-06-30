@@ -1,0 +1,42 @@
+<div class="large-3 large-centered columns">
+  <div class="signup-form panel">
+    {{#if error}}
+      {{#foundation-alert type="alert"}}{{error}}{{/foundation-alert}}
+    {{/if}}
+    <div class="row">
+      <div class="large-12 columns">
+        <form {{action "submit" on="submit"}}>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>First name
+                {{input type="text" value=model.firstName placeholder="Enter your first name"}}
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Last Name
+                {{input type="text" value=model.lastName placeholder="Enter your last name"}}
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Email
+                {{input type="email" value=model.email placeholder="Enter your email"}}
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Password
+                {{input type="password" value=model.password placeholder="Enter your password"}}
+              </label>
+            </div>
+          </div>
+          {{input type="submit" class="button expand" value="Sign up"}}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

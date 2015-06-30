@@ -45,6 +45,22 @@
  * @see {@link http://emberjs.com/api/data/classes/DS.Model.html}
  */
 
+ /**
+  * Ember's Mixin class
+  *
+  * @name external:Ember.Mixin
+  * @class
+  * @see {@link http://emberjs.com/api/data/classes/Ember.Mixin.html}
+  */
+
+/**
+ * Ember's RSVP Promise class
+ *
+ * @name external:Ember.RSVP.Promise
+ * @class
+ * @see {@link http://emberjs.com/api/classes/RSVP.Promise.html}
+ */
+
 /**
  * The instance of Ember.Application used throughout the app
  *

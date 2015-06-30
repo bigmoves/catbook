@@ -1,5 +1,30 @@
-<div class="row">
+<section class="row">
   <div class="column">
+    {{#each model as |item|}}
+      <article>
+        <header class="row">
+          <div class="small-4 columns">
+            <img src="{{item.user.photo}}" alt="{{item.user.firstName}}'s Photo">
+          </div>
 
+          <div class="small-8 columns">
+            <strong>{{item.title}}</strong><br>
+            <small>{{item.published}}</small>
+          </div>
+        </header>
+
+        <section class="row">
+          <div class="column">
+            {{{item.body}}}
+          </div>
+        </section>
+
+        <footer class="row">
+          <div class="column">
+            {{like-this item=item likes=item.likes}} | {{dislike-this item=item dislikes=item.dislikes}}
+          </div>
+        </footer>
+      </article>
+    {{/each}}
   </div>
-</div>
+</section>

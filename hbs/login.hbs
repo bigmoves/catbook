@@ -1,0 +1,28 @@
+<div class="large-3 large-centered columns">
+  <div class="login-form panel">
+    {{#if error}}
+      {{#foundation-alert type="alert"}}{{error}}{{/foundation-alert}}
+    {{/if}}
+    <div class="row">
+      <div class="large-12 columns">
+        <form {{action "submit" on="submit"}}>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Email
+                {{input type="email" value=email placeholder="Enter your email"}}
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Password
+                {{input type="password" value=password placeholder="Enter your password"}}
+              </label>
+            </div>
+          </div>
+          {{input type="submit" class="button expand" value="Log in"}}
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
