@@ -1,5 +1,5 @@
 App.Router.map(function() {
-  
+
   this.route('account');
 
   this.route('login');
@@ -8,7 +8,7 @@ App.Router.map(function() {
 
   this.route('profile');
 
-  this.route('sign-up');
+  this.route('signup');
 
   this.route('404', {
     path: '/*path'

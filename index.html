@@ -56,28 +56,44 @@
     <!-- htmlbuild:js -->
     <script src="bower_components/fastclick/lib/fastclick.js"></script>
     <script src="bower_components/foundation/js/foundation/foundation.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.alert.js"></script>
     <script src="bower_components/ember/ember.debug.js"></script>
     <script src="bower_components/ember-data/ember-data.js"></script>
     <script src="bower_components/firebase/firebase.js"></script>
     <script src="bower_components/emberfire/dist/emberfire.js"></script>
     <script src="js/templates.js"></script>
     <script src="js/app/app.js"></script>
-    <script src="js/app/routes.js"></script>
 
-    <!-- Adapters -->
-    <script src="js/app/adapters/firebase-adapter.js"></script>
+    <!-- Mixins -->
+    <script src="js/app/mixins/authenticated-mixin.js"></script>
 
     <!-- Services -->
     <script src="js/app/services/auth-service.js"></script>
+
+    <!-- Overrides -->
+    <script src="js/app/overrides.js"></script>
+
+    <script src="js/app/routes.js"></script>
+
+    <!-- Components -->
+    <script src="js/app/components/foundation-alert.js"></script>
+
+    <!-- Adapters -->
+    <script src="js/app/adapters/firebase-adapter.js"></script>
 
     <!-- Models -->
     <script src="js/app/models/user.js"></script>
 
     <!-- Routes -->
     <script src="js/app/routes/404-route.js"></script>
+    <script src="js/app/routes/login-route.js"></script>
+    <script src="js/app/routes/signup-route.js"></script>
+    <script src="js/app/routes/application-route.js"></script>
+    <script src="js/app/routes/index-route.js"></script>
 
     <!-- Controllers -->
     <script src="js/app/controllers/index-controller.js"></script>
+    <script src="js/app/controllers/login-controller.js"></script>
     <!-- endbuild -->
 
     <!--[if lt IE 9]>

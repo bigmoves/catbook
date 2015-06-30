@@ -45,6 +45,14 @@
  * @see {@link http://emberjs.com/api/data/classes/DS.Model.html}
  */
 
+ /**
+  * Ember's Mixin class
+  *
+  * @name external:Ember.Mixin
+  * @class
+  * @see {@link http://emberjs.com/api/data/classes/Ember.Mixin.html}
+  */
+
 /**
  * The instance of Ember.Application used throughout the app
  *
