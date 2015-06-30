@@ -27,6 +27,7 @@ App.AuthenticatedMixin = Ember.Mixin.create({
    * @memberof App.AuthenticatedMixin
    */
   accessDenied: function() {
+    
     this.transitionTo('login');
   },
   /**
