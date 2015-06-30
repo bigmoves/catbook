@@ -4,34 +4,30 @@
 	</div>
 </header>
 
-
 {{#if isLoggedIn}}
-<div class="row">
-  <div class="column">
-      <div class="row">
-        <div class="column">
-          <nav class="top-bar" data-topbar role="navigation">
-            <ul class="left">
-              <li class="name"><h2>{{#link-to "index"}}Home{{/link-to}}</h2></li>
-            </ul>
-            <ul class="left">
-              <li class="name"><h2>{{#link-to "profile"}}My Profile{{/link-to}}</h2></li>
-            </ul>
-            <ul class="left">
-              <li class="name"><h2>{{#link-to "account"}}My Account{{/link-to}}</h2></li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    
-  </div>
-</div>
+  <nav class="top-bar row" data-topbar role="navigation">
+    <div class="column">
+      <ul class="left">
+        <li class="name"><h2>{{#link-to "index"}}Home{{/link-to}}</h2></li>
+      </ul>
+
+      <ul class="left">
+        <li class="name"><h2>{{#link-to "profile" auth.currentUser}}My Profile{{/link-to}}</h2></li>
+      </ul>
+
+      <ul class="left">
+        <li class="name"><h2>{{#link-to "account"}}My Account{{/link-to}}</h2></li>
+      </ul>
+
+      <ul class="left">
+        <li class="name"><h2>{{#link-to "messages"}}Messages{{/link-to}}</h2></li>
+      </ul>
+    </div>
+  </nav>
 {{else}}
-<div class="row">
-	<div class="column">
-		<hr />
-	</div>
-</div>
+  <div class="row">
+  	<div class="column">
+  		<hr>
+  	</div>
+  </div>
 {{/if}}
-
-
