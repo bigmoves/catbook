@@ -12,5 +12,7 @@ App.Activity = DS.Model.extend({
   // comments: DS.hasMany(),
   published: DS.attr('date'),
   title: DS.attr(),
-  user: DS.belongsTo('user')
+  user: DS.belongsTo('user', {
+    async: true
+  })
 });

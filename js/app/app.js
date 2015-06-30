@@ -61,3 +61,10 @@
  * @extends external:Ember.Application
  */
 App = Ember.Application.create();
+
+(function() {
+
+  var inflector = Ember.Inflector.inflector;
+
+  inflector.uncountable('activity');
+})();
