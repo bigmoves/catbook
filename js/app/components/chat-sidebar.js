@@ -18,7 +18,7 @@ App.ChatSidebarComponent =  Ember.Component.extend({
    *
    * @type {Object}
    */
-  auth: Ember.inject.service('auth'),
+  auth: Ember.inject.service(),
 
   /**
    * Ensure most recent message is displayed when element is inserted
@@ -28,7 +28,7 @@ App.ChatSidebarComponent =  Ember.Component.extend({
    */
   didInsertElement: function() {
     // Ensure messages default to most recent
-    $('.js-chat-messages').scrollTop(999);
+    $('.js-chat-messages').scrollTop(9999);
   },
 
   /**
@@ -39,35 +39,40 @@ App.ChatSidebarComponent =  Ember.Component.extend({
    */
   scrollMessages: function() {
     var messages = $('.js-chat-messages');
-    var height = messages.height();
-    messages.animate({ scrollTop: height}, 250);
+    var height = messages.prop('scrollHeight');
+    messages.animate({ scrollTop: height}, 200);
   },
 
   actions: {
+    /**
+     * Toggle the active status of the chat sidebar
+     *
+     * @memberof App.ChatSidebar
+     * @instance
+     */
     toggleChat: function() {
       this.toggleProperty('isActive');
     },
 
+    /**
+     * Post user message to Firebase
+     *
+     * @memberof App.ChatSidebar
+     * @instance
+     */
     postMessage: function() {
       var store = this.get('store');
       var message = this.get('currentInput');
-      var user = this.get('auth.user');
-      var _this = this;
-
-      console.log('current user', user);
+      var user = this.get('auth.currentUser');
       
-      store.find('user', 1).then(function(resp) {
-        // Send This to FireBase
-        var newMessage = store.createRecord('chat', {
-          user: resp,
-          message: message
-        });
-        newMessage.save().then(function() {
-          _this.scrollMessages();
-        });
+      var newMessage = store.createRecord('chat', {
+        user: user,
+        message: message
+      });
+      newMessage.save();
 
-        _this.set('currentInput', '');
-      }); // Change to correct signed in user
+      this.scrollMessages();
+      this.set('currentInput', '');
     }
   }
 });
