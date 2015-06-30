@@ -15,14 +15,13 @@
 
         <section class="row">
           <div class="column">
-            {{item.body}}
+            {{{item.body}}}
           </div>
         </section>
 
         <footer class="row">
           <div class="column">
-            <a href="#">Like</a> ({{item.likes}})
-            <a href="#">Dislike</a> ({{item.dislikes}})
+            {{like-this item=item likes=item.likes}} | {{dislike-this item=item dislikes=item.dislikes}}
           </div>
         </footer>
       </article>

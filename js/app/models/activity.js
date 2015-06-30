@@ -7,10 +7,14 @@
  */
 App.Activity = DS.Model.extend({
   body: DS.attr(),
-  dislikes: DS.attr('number'),
-  likes: DS.attr('number'),
+  dislikes: DS.hasMany('dislikes', {
+    async: true
+  }),
+  likes: DS.hasMany('likes', {
+    async: true
+  }),
   // comments: DS.hasMany(),
-  published: DS.attr('date'),
+  published: DS.attr('number'),
   title: DS.attr(),
   user: DS.belongsTo('user', {
     async: true

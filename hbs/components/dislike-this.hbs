@@ -1,0 +1,14 @@
+<a {{action "dislike" item}}>Dislike</a>
+
+<span data-dropdown="dislike-{{elementId}}" aria-controls="dislike-{{elementId}}" aria-expanded="false">
+  ({{dislikes.length}})
+</span>
+
+<div id="dislike-{{elementId}}" class="f-dropdown content" data-dropdown-content aria-hidden="true" tabindex="-1">
+  Dislikes:
+  <ul class="no-bullet">
+    {{#each dislikes as |dislike|}}
+      <li>{{dislike.user.firstName}} {{dislike.user.lastName}}</li>
+    {{/each}}
+  </ul>
+</div>
