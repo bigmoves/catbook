@@ -22,6 +22,4 @@ App.ApplicationController = Ember.Controller.extend({
    * @type {boolean}
    */
   isLoggedIn: Ember.computed.oneWay('auth.isLoggedIn')
-
-
 });
