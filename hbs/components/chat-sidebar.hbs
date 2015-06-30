@@ -1,0 +1,11 @@
+<div class="js-chat-sidebar chat-sidebar {{if isActive 'active'}}">
+  <h3 {{action "toggleChat"}} class="chat-title">The Chat Sidebar</h3>
+  <div class="js-chat-messages chat-messages">
+    {{#each model as |chat|}}
+      <div class="chat-message">
+        <p>{{chat.user.firstName}}: {{chat.message}}</p>
+      </div>
+    {{/each}}
+  </div>
+  {{input type=text enter="postMessage" value=currentInput class="js-chat-input chat-input"}}
+</div>

@@ -1,0 +1,61 @@
+// --------------------------------------------
+// Chat Sidebar Componenent
+// --------------------------------------------
+.chat-sidebar {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 35px;
+  width: 25%;
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  border-top-left-radius: 5px;
+  padding: 0 20px;
+  transition: height .5s;
+  overflow: hidden;
+}
+
+.chat-sidebar.active {
+  height: 70%;
+
+  .chat-input {
+    display: block;
+  }
+
+  .chat-title {
+    border-bottom: 1px solid #ccc;
+  }
+}
+
+// Chat Sidebar Components
+// Uses chat namespace
+.chat-title {
+  font-size: 1.3em;
+  width: 120%;
+  cursor: pointer;
+  background: #2ba6cb;
+  font-weight: bold;
+  margin: 0 0 0 -20px;
+  padding: 5px 0 5px 20px;
+  color: white;
+}
+
+.chat-input {
+  width: 90%;
+  display: none;
+  position: absolute;
+  bottom: 10px;
+}
+
+.chat-messages {
+  height: 75%;
+  width: 100%;
+  overflow-y: scroll;
+  padding-top: 5px;
+
+  p {
+    margin: 0 20px 7px 0;
+    padding-bottom: 7px;
+    border-bottom: 1px solid #e9e9e9;
+  }
+}
