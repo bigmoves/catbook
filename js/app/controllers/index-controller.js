@@ -22,6 +22,4 @@ App.IndexController = Ember.Controller.extend({
    * @type {boolean}
    */
   isLoggedIn: Ember.computed.oneWay('auth.isLoggedIn')
-
-  
 });

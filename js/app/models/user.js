@@ -18,8 +18,13 @@ App.User = DS.Model.extend({
     
     return this.get('firstName') + ' ' + this.get('lastName');
   }),
+  hobbies: DS.hasMany('hobbies'),
+  hometown: DS.attr(),
   lastName: DS.attr(),
   likes: DS.hasMany('like', {
     async: true
-  })
+  }),
+  photo: DS.attr(),
+  relationship: DS.belongsTo('user'),
+  relationshipStatus: DS.attr()
 });

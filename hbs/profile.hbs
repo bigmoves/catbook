@@ -1,1 +1,28 @@
-<a href="mailto:{{model.email}}">{{model.firstName}} {{model.lastName}}</a>
+<div class="row">
+	<div class="small-4 columns"><img src={{model.photo}}></div>
+	<div class="small-4 columns"><h3>{{model.fullName}}</h3></div>
+</div>
+
+<div class="row">
+	<div class="small-12 columns"><h2>About</h2></div>
+	<div class="small-12 columns">{{model.email}}</div>
+	<div class="small-12 columns">{{model.hometown}}</div>
+</div>
+
+<div class="row">
+	<div class="small-12 columns"><h2>Relationship</h2></div>
+	<div class="small-12 columns">{{model.relationshipStatus}}</div>
+</div>
+
+<div class="row">
+	<div class="small-12 columns">
+		{{#each model as |cat|}}
+
+	    <h5>Hobbies:</h5>
+	    {{#each cat.hobbies as |hobbies|}}
+	      {{hobbies.hobbyName}}
+	    {{/each}}
+
+    {{/each}}
+	</div>
+</div>
