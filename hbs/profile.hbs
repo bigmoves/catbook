@@ -20,9 +20,11 @@
 
     <h3>Hobbies:</h3>
     {{#if model.hobbies}}
+    <ul>
       {{#each model.hobbies as |hobby|}}
-        {{hobby.hobbyName}}
+        <li>{{hobby.hobbyName}}</li>
       {{/each}}
+    </ul>
     {{else}}
       No hobbies
     {{/if}}
