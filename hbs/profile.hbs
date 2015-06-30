@@ -17,14 +17,16 @@
 
   <div class="row">
     <div class="small-12 columns">
-      {{#each model as |cat|}}
 
-        <h3>Hobbies:</h3>
-        {{#each cat.hobbies as |hobbies|}}
-          {{hobbies.hobbyName}}
-        {{/each}}
-
+    <h3>Hobbies:</h3>
+    {{#if model.hobbies}}
+      {{#each model.hobbies as |hobby|}}
+        {{hobby.hobbyName}}
       {{/each}}
+    {{else}}
+      No hobbies
+    {{/if}}
+
     </div>
   </div>
 </div>

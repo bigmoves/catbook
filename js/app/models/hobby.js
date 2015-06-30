@@ -1,3 +1,6 @@
+// Update Ember's inflection rules for this model
+Ember.Inflector.inflector.uncountable('hobby');
+
 /**
  * The hobbies model
  *
@@ -6,6 +9,6 @@
  * @extends external:DS.Model
  */
 App.Hobby = DS.Model.extend({
-	hobbies: DS.hasMany('users', {inverse: 'hobbies'}),
+	user: DS.hasMany('user'),
 	hobbyName: DS.attr()
-})
+});
