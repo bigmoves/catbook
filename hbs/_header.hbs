@@ -22,6 +22,10 @@
       <ul class="left">
         <li class="name"><h2>{{#link-to "messages"}}Messages{{/link-to}}</h2></li>
       </ul>
+
+      <ul class="right">
+        <li {{action "logout"}} class="name"><h2 class="name top-bar-logout">Log Out</h2></li>
+      </ul>
     </div>
   </nav>
 {{else}}

@@ -25,7 +25,7 @@ App.ApplicationRoute = Ember.Route.extend({
     logout: function() {
 
       this.get('auth').close().then(function() {
-        window.location.replace('/#/login');
+        window.location.replace('#/login');
       });
     }
   }
