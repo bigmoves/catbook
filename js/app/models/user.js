@@ -12,22 +12,24 @@ App.User = DS.Model.extend({
   dislikes: DS.hasMany('dislike', {
     async: true
   }),
-  email: DS.attr(),
-  firstName: DS.attr(),
+  email: DS.attr('string'),
+  firstName: DS.attr('string'),
   fullName: Ember.computed('firstName', 'lastName', function() {
-    
+
     return this.get('firstName') + ' ' + this.get('lastName');
   }),
   hobbies: DS.hasMany('hobby', {
     async: true
   }),
-  hometown: DS.attr(),
-  lastName: DS.attr(),
+  hometown: DS.attr('string'),
+  lastName: DS.attr('string'),
   likes: DS.hasMany('like', {
     async: true
   }),
-  photo: DS.attr(),
+  photo: DS.attr('string'),
   relationship: DS.belongsTo('user'),
   relationshipStatus: DS.attr(),
+  coverPhoto: DS.attr()
+  relationshipStatus: DS.attr('string')
   coverPhoto: DS.attr()
 });
