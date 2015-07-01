@@ -1,0 +1,21 @@
+<div class="row">
+  <button class="button alert" data-reveal-id="areYouSure">Delete account</button>
+
+  <div id="areYouSure" class="reveal-modal tiny" data-reveal aria-labelledby="areYouSure" aria-hidden="true" role="dialog">
+    <img src="https://s-media-cache-ak0.pinimg.com/736x/5a/28/82/5a28824c7c37f874f8cf735d3fdf98d9.jpg" style="margin-top: 30px;"/>
+    <h1>Are you sure?</h1>
+
+    {{#if showDeleteAccountPasswordInput}}
+      {{input type="text" value=confirmPassword}}
+      {{#disablable-button class="button alert"
+                          disabled=confirmPassword.length
+                          onClick=(action "deleteAccount" confirmPassword)}}
+        Delete account for reals
+      {{/disablable-button}}
+    {{else}}
+      <a href="#" class="button" {{action "showPassword"}}>Yes</a>
+      <a href="#" class="button">No</a>
+    {{/if}}
+    <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  </div>
+</div>

@@ -1,29 +1,33 @@
-<header class="row">
-  <div class="row">
-  	<div class="small-3 small-centered columns"><h1>Catbook</h1></div>
-	</div>
+<header>
+  <h1 class="app-title">Catbook</h1>
 </header>
 
 {{#if isLoggedIn}}
-  <nav class="top-bar row" data-topbar role="navigation">
-    <div class="column">
-      <ul class="left">
-        <li class="name"><h2>{{#link-to "index"}}Home{{/link-to}}</h2></li>
-      </ul>
+  <div class="nav-wrapper">
+    <nav class="top-bar row" data-topbar role="navigation">
+      <div class="column">
+        <ul class="left">
+          <li class="name"><h2>{{#link-to "index"}}<i class="fa fa-home fa-left"></i>Home{{/link-to}}</h2></li>
+        </ul>
 
-      <ul class="left">
-        <li class="name"><h2>{{#link-to "profile" auth.currentUser}}My Profile{{/link-to}}</h2></li>
-      </ul>
+        <ul class="left">
+          <li class="name"><h2>{{#link-to "profile" auth.currentUser}}My Profile{{/link-to}}</h2></li>
+        </ul>
 
-      <ul class="left">
-        <li class="name"><h2>{{#link-to "account"}}My Account{{/link-to}}</h2></li>
-      </ul>
+        <ul class="left">
+          <li class="name"><h2>{{#link-to "account"}}My Account{{/link-to}}</h2></li>
+        </ul>
 
-      <ul class="left">
-        <li class="name"><h2>{{#link-to "messages"}}Messages{{/link-to}}</h2></li>
-      </ul>
-    </div>
-  </nav>
+        <ul class="left">
+          <li class="name"><h2>{{#link-to "messages"}}Messages{{/link-to}}</h2></li>
+        </ul>
+
+        <ul class="right">
+          <li {{action "logout"}} class="name"><h2 class="name top-bar-logout">Log Out</h2></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 {{else}}
   <div class="row">
   	<div class="column">

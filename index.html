@@ -16,7 +16,11 @@
 
     <!-- htmlbuild:css -->
     <link rel="stylesheet" href="scss/style.scss">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
     <!-- endbuild -->
+
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 
     <!--[if lt IE 9]>
       <link rel="stylesheet" href="css/foundation-ie8/ie8-grid-foundation-4.css">
@@ -58,6 +62,7 @@
     <script src="bower_components/foundation/js/foundation/foundation.js"></script>
     <script src="bower_components/foundation/js/foundation/foundation.alert.js"></script>
     <script src="bower_components/foundation/js/foundation/foundation.dropdown.js"></script>
+    <script src="bower_components/foundation/js/foundation/foundation.reveal.js"></script>
     <script src="bower_components/ember/ember.debug.js"></script>
     <script src="bower_components/ember-data/ember-data.js"></script>
     <script src="bower_components/firebase/firebase.js"></script>
@@ -67,6 +72,7 @@
 
     <!-- Mixins -->
     <script src="js/app/mixins/authenticated-mixin.js"></script>
+    <script src="js/app/mixins/foundation-mixin.js"></script>
 
     <!-- Services -->
     <script src="js/app/services/auth-service.js"></script>
@@ -81,6 +87,8 @@
     <script src="js/app/components/dislike-this-component.js"></script>
     <script src="js/app/components/foundation-alert.js"></script>
     <script src="js/app/components/like-this-component.js"></script>
+    <script src="js/app/components/about.js"></script>
+    <script src="js/app/components/disablable-button-component.js"></script>
 
     <!-- Adapters -->
     <script src="js/app/adapters/firebase-adapter.js"></script>
@@ -100,12 +108,19 @@
     <script src="js/app/routes/login-route.js"></script>
     <script src="js/app/routes/messages-route.js"></script>
     <script src="js/app/routes/signup-route.js"></script>
+    <script src="js/app/routes/account-route.js"></script>
 
     <!-- Controllers -->
     <script src="js/app/controllers/application-controller.js"></script>
     <script src="js/app/controllers/login-controller.js"></script>
     <script src="js/app/controllers/profile-controller.js"></script>
+    <script src="js/app/controllers/account-controller.js"></script>
+
+    <!-- Views -->
+    <script src="js/app/views/account-view.js"></script>
+
     <!-- endbuild -->
+
 
     <!--[if lt IE 9]>
       <!-- htmlbuild:jsvendor -->

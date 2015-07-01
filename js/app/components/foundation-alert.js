@@ -4,23 +4,12 @@
  * @memberof App
  * @constructor
  */
-App.FoundationAlertComponent = Ember.Component.extend({
+App.FoundationAlertComponent = Ember.Component.extend(App.FoundationMixin, {
   /**
    * Foundation alert class name
    *
    * @type {string}
    * @memberof App.FoundationAlertComponent
    */
-  type: '',
-  /**
-   * Reinitialize foundation
-   *
-   * @returns {void}
-   * @memberof App.FoundationAlertComponent
-   */
-  didInsertElement: function() {
-    Ember.run.scheduleOnce('afterRender', function() {
-      $(document).foundation();
-    });
-  }
+  type: ''
 });

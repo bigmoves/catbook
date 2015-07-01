@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 @import
+  "../bower_components/foundation/scss/foundation/functions",
+  "base/settings",
   "../bower_components/foundation/scss/normalize.scss",
   "../bower_components/foundation/scss/foundation/components/grid",
   "../bower_components/foundation/scss/foundation/components/accordion",
@@ -39,7 +41,11 @@
   "../bower_components/foundation/scss/foundation/components/type",
   "../bower_components/foundation/scss/foundation/components/offcanvas",
   "../bower_components/foundation/scss/foundation/components/visibility",
+  "base/typography",
+  "modules/activity",
+  "modules/like",
   "modules/login",
   "modules/signup",
   "modules/chat-sidebar",
-  "modules/profile";
+  "modules/profile",
+  "modules/header";
