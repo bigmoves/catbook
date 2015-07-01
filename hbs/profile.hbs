@@ -16,7 +16,7 @@
   </div>
 
   <div class="row">
-    <div class="small-12 columns">
+    <div class="small-4 columns">
 
     <h3>Hobbies:</h3>
     {{#if model.hobbies}}
@@ -28,6 +28,8 @@
     {{else}}
       No hobbies
     {{/if}}
+    {{input type="text" value=newHobby placeholder="Add a hobby"}}
+    <button type="button" {{action "addHobby" newHobby}} class="tiny round right">Add Hobby</button>
 
     </div>
   </div>
