@@ -1,3 +1,10 @@
+/**
+ * Profile page controller
+ * 
+ * @memberOf App
+ * @constructor
+ * @extends Ember.Controller
+ */
 App.ProfileController = Ember.Controller.extend({
   newHobby: '',
 

@@ -1,7 +1,7 @@
 <div class="about row">
   <div class="small-12 columns"><h3>About</h3></div>
   <div class="small-12 columns"><b>Email:</b> <a href="mailto:{{model.email}}?Subject=Meow">{{model.email}}</a></div>
-  <div class="small-12 columns"><a {{action 'editHome'}}><b>Hometown:</b> {{model.hometown}}</a></div>
+  <div class="small-12 columns"><b>Hometown:</b><a {{action 'editHome'}}> {{model.hometown}}</a></div>
   {{#if showHometown}}
     <div class="small-4 columns">
     <form {{action 'submitHometown' hometown on='submit'}}>
@@ -11,7 +11,7 @@
     </div>
   {{/if}}
   
-  <div class="small-12 columns"><a {{action 'editRelationship'}}><b>Relationship:</b> {{model.relationshipStatus}}</a></div>
+  <div class="small-12 columns"><b>Relationship:</b><a {{action 'editRelationship'}}> {{model.relationshipStatus}}</a></div>
   {{#if showRelationship}}
     <div class="small-4 columns left">
       <form {{action 'submitRelationship' relationship on='submit'}}>
