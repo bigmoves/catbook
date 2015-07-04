@@ -27,7 +27,7 @@ App.User = DS.Model.extend({
     async: true
   }),
   photo: DS.attr('string'),
-  relationship: DS.belongsTo('user'),
+  //relationship: DS.belongsTo('user'),
   relationshipStatus: DS.attr(),
   coverPhoto: DS.attr(),
   relationshipStatus: DS.attr('string'),

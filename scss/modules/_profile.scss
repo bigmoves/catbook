@@ -9,9 +9,17 @@
     width: 100%;
   }
 }
+
+.row .row {
+  margin: 0;
+}
+
 .wrap {
+  background-color: #fff;
   margin-top: -50px;
+
   .about {}
+
   .friend {
     height: 40px;
     overflow: hidden;
@@ -23,16 +31,25 @@
       vertical-align: text-bottom;
     }
   }
+  
+  .friends {
+    min-height: 100px;
+  }
+
   .profile-photo {
 
     img {
       border: 5px solid #fff;
     }
     
-    .name {
+    &.name {
       font-weight: bold;
       text-shadow: 1px 1px 0px rgba(255, 255, 255, 1);
       font-size: 28px;
     } 
+  }
+
+  .row {
+    background-color: #fff;
   }
 }

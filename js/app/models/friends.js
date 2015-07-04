@@ -11,6 +11,6 @@ Ember.Inflector.inflector.uncountable('friend');
 App.Friend = DS.Model.extend({
   user: DS.belongsTo('user', { async: true}),
   photo: DS.attr(),
-  fullName: DS.attr()
-	//friend: DS.hasMany('friend', { async: true})
+  fullName: DS.attr(),
+	user_id: DS.attr()
 });

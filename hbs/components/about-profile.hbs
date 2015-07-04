@@ -1,4 +1,4 @@
-<div class="row about">
+<div class="about row">
   <div class="small-12 columns"><h3>About</h3></div>
   <div class="small-12 columns"><b>Email:</b> <a href="mailto:{{model.email}}?Subject=Meow">{{model.email}}</a></div>
   <div class="small-12 columns"><a {{action 'editHome'}}><b>Hometown:</b> {{model.hometown}}</a></div>
@@ -10,12 +10,12 @@
     </div>
   {{/if}}
   
-  <div class="class-12 columns"><a {{action 'editRelationship'}}><b>Relationship:</b> {{model.relationshipStatus}}</a></div>
+  <div class="small-12 columns"><a {{action 'editRelationship'}}><b>Relationship:</b> {{model.relationshipStatus}}</a></div>
   {{#if showRelationship}}
     <div class="small-4 columns left">
-    <form {{action 'submitRelationship' relationship on='submit'}}>
-      {{input value=relationship placeholder="Enter relationship"}}
-    </form>
+      <form {{action 'submitRelationship' relationship on='submit'}}>
+        {{input value=relationship placeholder="Enter relationship"}}
+      </form>
     </div>
   {{/if}}
 </div>

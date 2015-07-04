@@ -2,17 +2,14 @@
   <div class="small-12 cover"><img src={{model.coverPhoto}}></div>
 </div>
 
-<div class="wrap">
-  <div class="row profile-photo">
-    <div class="small-4 columns"><img src={{model.photo}}></div>
-    <div class="small-4 columns name">{{model.fullName}}</div>
+<div class="wrap row">
+  <div class="profile-photo name">
+    <div class="small-4 columns"><img src={{model.photo}}>{{model.fullName}}</div>
   </div>
 
-{{about-profile model=model}}
+  {{about-profile model=model}}
 
-  <div class="row">
-    <div class="small-4 columns">
-
+  <div class="small-4 columns">
     <h3>Hobbies:</h3>
     {{#if model.hobbies}}
     <ul>
@@ -25,24 +22,24 @@
     {{/if}}
     {{input type="text" value=newHobby placeholder="Add a hobby"}}
     <button type="button" {{action "addHobby" newHobby}} class="tiny round right">Add Hobby</button>
+  </div>
 
+  <div class="small-4 columns"></div>
+
+
+    <div class="small-4 columns friends">
+      <h3>Friends:</h3>
+      {{#if model.friend}}
+      <ul class="no-bullet">
+        {{#each model.friend as |friend|}}
+        {{#link-to "profile" friend.user_id}}
+          <li class="friend"><img src={{friend.photo}}> <span>{{friend.fullName}}</span></li>
+        {{/link-to}}
+        {{/each}}
+      </ul>
+      {{else}}
+        {{model.fullName}} has no friends (∩︵∩)
+      {{/if}}
     </div>
-  </div>
-  <div class="row">
-  <div class="small-4 columns">
-    <h3>Friends:</h3>
-    {{#if model.friend}}
-    <ul class="no-bullet">
-      {{#each model.friend as |friend|}}
-      {{#link-to "profile" friend.user}}
-        <li class="friend"><img src={{friend.photo}}> <span>{{friend.fullName}}</span></li>
-      {{/link-to}}
-      {{/each}}
-    </ul>
-    {{else}}
-      {{model.fullName}} has no friends (∩︵∩)
-    {{/if}}
-  </div>
-    
-  </div>
+
 </div>
