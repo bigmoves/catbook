@@ -18,7 +18,15 @@
   background-color: #fff;
   margin-top: -50px;
 
-  .about {}
+  .about {
+    
+    .close-container {
+      margin: 5px 0 0 10px;
+    }
+    .close {
+      color: red;
+    }
+  }
 
   .friend {
     height: 40px;

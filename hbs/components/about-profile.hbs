@@ -5,7 +5,8 @@
   {{#if showHometown}}
     <div class="small-4 columns">
     <form {{action 'submitHometown' hometown on='submit'}}>
-      {{input value=hometown placeholder="Enter hometown"}}
+      <div class="left">{{input value=hometown placeholder="Enter hometown"}}</div>
+      <div class="left close-container"><a {{action 'editHome'}} class="close"><i class="fa fa-times"></i></a></div>
     </form>
     </div>
   {{/if}}
@@ -14,7 +15,8 @@
   {{#if showRelationship}}
     <div class="small-4 columns left">
       <form {{action 'submitRelationship' relationship on='submit'}}>
-        {{input value=relationship placeholder="Enter relationship"}}
+        <div class="left">{{input value=relationship placeholder="Enter relationship"}}</div>
+        <div class="left close-container"><a {{action 'editRelationship'}} class="close"><i class="fa fa-times"></i></a></div>
       </form>
     </div>
   {{/if}}
