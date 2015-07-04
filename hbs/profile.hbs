@@ -34,8 +34,8 @@
     {{#if model.friend}}
     <ul class="no-bullet">
       {{#each model.friend as |friend|}}
-      {{#link-to "profile" friend}}
-        <li class="friend"><img src={{friend.user.photo}}> <span>{{friend.user.fullName}}</span></li>
+      {{#link-to "profile" friend.user}}
+        <li class="friend"><img src={{friend.photo}}> <span>{{friend.fullName}}</span></li>
       {{/link-to}}
       {{/each}}
     </ul>
