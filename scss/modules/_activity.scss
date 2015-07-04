@@ -11,6 +11,8 @@
 
 .activity-item-footer {
   font-size: $small-font-size;
+  background: #fff;
+  height: auto;
 }
 
 .activity-item-header {
@@ -23,6 +25,8 @@
   left: -50px;
   position: absolute;
   width: 40px;
+  height: 40px;
+  overflow: hidden;
 }
 
 .activity-item-profile-link {
