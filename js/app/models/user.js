@@ -31,5 +31,6 @@ App.User = DS.Model.extend({
   relationshipStatus: DS.attr(),
   coverPhoto: DS.attr(),
   relationshipStatus: DS.attr('string'),
-  coverPhoto: DS.attr()
+  coverPhoto: DS.attr(),
+  friend: DS.hasMany('friend', {async: true})
 });

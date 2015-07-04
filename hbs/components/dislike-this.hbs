@@ -1,6 +1,6 @@
 <a {{action "dislike" item}} class="mono" title="Dislike this">(*)</a>
 
-<span class="like-count" data-dropdown="dislike-{{elementId}}" aria-controls="dislike-{{elementId}}" aria-expanded="false">
+<span class="like-count" data-dropdown="dislike-{{elementId}}" data-options="is_hover:true; hover_timeout:500" aria-controls="dislike-{{elementId}}" aria-expanded="false">
   (<span class="like-count-number">{{dislikes.length}}</span>)
 </span>
 

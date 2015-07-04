@@ -28,4 +28,21 @@
 
     </div>
   </div>
+  <div class="row">
+  <div class="small-4 columns">
+    <h3>Friends:</h3>
+    {{#if model.friend}}
+    <ul class="no-bullet">
+      {{#each model.friend as |friend|}}
+      {{#link-to "profile" friend}}
+        <li class="friend"><img src={{friend.user.photo}}> <span>{{friend.user.fullName}}</span></li>
+      {{/link-to}}
+      {{/each}}
+    </ul>
+    {{else}}
+      {{model.fullName}} has no friends (∩︵∩)
+    {{/if}}
+  </div>
+    
+  </div>
 </div>

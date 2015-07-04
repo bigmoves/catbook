@@ -12,6 +12,17 @@
 .wrap {
   margin-top: -50px;
   .about {}
+  .friend {
+    height: 40px;
+    overflow: hidden;
+    img {
+      width:40px;
+    }
+    span {
+      margin-left: 5px;
+      vertical-align: text-bottom;
+    }
+  }
   .profile-photo {
 
     img {

@@ -1,6 +1,6 @@
 <a {{action "like" item}} title="Like this">Like</a>
 
-<span class="like-count" data-dropdown="like-{{elementId}}" aria-controls="like={{elementId}}" aria-expanded="false">
+<span class="like-count" data-dropdown="like-{{elementId}}" data-options="is_hover:true; hover_timeout:500" aria-controls="like={{elementId}}" aria-expanded="false">
   (<span class="like-count-number">{{likes.length}}</span>)
 </span>
 
