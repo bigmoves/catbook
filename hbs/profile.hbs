@@ -29,10 +29,10 @@
 
     <div class="small-4 columns friends">
       <h3>Friends:</h3>
-      {{#if model.friend}}
+      {{#if model.friends}}
       <ul class="no-bullet">
-        {{#each model.friend as |friend|}}
-        {{#link-to "profile" friend.user_id}}
+        {{#each model.friends as |friend|}}
+        {{#link-to "profile" friend}}
           <li class="friend"><img src={{friend.photo}}> <span>{{friend.fullName}}</span></li>
         {{/link-to}}
         {{/each}}

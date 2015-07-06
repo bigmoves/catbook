@@ -1,5 +1,5 @@
-// Update Ember's inflection rules for this model
-Ember.Inflector.inflector.uncountable('friend');
+// // Update Ember's inflection rules for this model
+// Ember.Inflector.inflector.uncountable('friend');
 
 /**
  * The friends model
