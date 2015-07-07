@@ -1,3 +1,10 @@
+// ----------------------------------------------
+// Index Page Activity Feed
+// ----------------------------------------------
+.cat-feed-wrapper {
+  margin-top: 20px;
+}
+
 .activity-item {
   background-color: $white;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
@@ -5,30 +12,44 @@
   padding: 1rem;
 }
 
-.activity-item-body {
-  margin-bottom: 0.5rem;
+// Header/Image/Body
+// ----------------------------------------------
+// .activity-item-header {
+//   position: relative;
+// }
+
+.activity-item-header-image {
+  width: 85px;
+  height: 85px;
+  overflow: hidden;
+  float: left;
+  margin-right: 30px;
 }
 
+.activity-item-body {
+  margin-bottom: 0.5rem;
+
+  p {
+    margin-bottom: 7px;
+  }
+}
+
+.activity-item-profile-link {
+  font-weight: $font-weight-bold;
+  font-family: $primary-font-stack;
+  font-size: 1.2em;
+}
+
+// Footer/Dis-Like
+// ----------------------------------------------
 .activity-item-footer {
   font-size: $small-font-size;
   background: #fff;
   height: auto;
 }
 
-.activity-item-header {
-  height: 40px;
-  margin-left: 50px;
-  position: relative;
-}
-
-.activity-item-header-image {
-  left: -50px;
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  overflow: hidden;
-}
-
-.activity-item-profile-link {
-  font-weight: $font-weight-bold;
+.dis-like-wrapper {
+  margin-top: 10px;
+  display: block;
+  float: right;
 }

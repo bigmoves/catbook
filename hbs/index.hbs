@@ -1,43 +1,45 @@
 <section class="row">
-  <div class="large-8 columns">
+  <div class="large-8 columns cat-feed-wrapper">
     {{!input-status post="post"}}
 
     {{#each model as |item|}}
       <article class="activity-item">
+        
         <header class="row">
           <div class="column">
+            
             <div class="activity-item-header">
               <div class="activity-item-header-image">
                 {{#link-to "profile" item.user}}
                   <img src="{{item.user.photo}}" alt="{{item.user.fullName}}'s Photo">
                 {{/link-to}}
               </div>
+            </div>
 
-              {{#link-to "profile" item.user class="strong"}}
+            <div>
+              {{#link-to "profile" item.user class="activity-item-profile-link"}}
                 {{item.user.fullName}}
               {{/link-to}}
               <br>
               <small>{{!format-date item.published}}</small>
+              <div class="activity-item-body">
+                {{{item.body}}}
+              </div>
             </div>
           </div>
         </header>
 
-        <section class="row">
-          <div class="column">
-            <div class="activity-item-body">
-              {{{item.body}}}
-            </div>
-          </div>
-        </section>
-
         <footer class="row activity-item-footer">
-          <div class="column">
-            {{like-this item=item likes=item.likes}}
-            &nbsp;&#8226;&nbsp;
-            {{dislike-this item=item dislikes=item.dislikes}}
+          <div class="column clearfix">
+            <div class="dis-like-wrapper">
+              {{like-this item=item likes=item.likes}}
+              <span>&nbsp;&#8226;&nbsp;</span>
+              {{dislike-this item=item dislikes=item.dislikes}}
+            </div>
           </div>
         </footer>
       </article>
     {{/each}}
+
   </div>
 </section>
