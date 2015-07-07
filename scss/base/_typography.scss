@@ -1,8 +1,21 @@
-// For ficons left aligned
+// ----------------------------------------------
+// Typography Styles
+// ----------------------------------------------
+
+// Font Stacks
+// ----------------------------------------------
+$primary-font-stack: "Pontano Sans", sans-serif;
+$header-font-stack: "Indie Flower", cursive;
+
+// Font Icons
+// ----------------------------------------------
 .fa-left {
   padding-right: 5px;
 }
 
+// Utility Classes
+// ----------------------------------------------
 .mono {
   font-family: $font-family-monospace;
 }
+
