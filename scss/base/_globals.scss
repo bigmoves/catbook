@@ -1,14 +1,19 @@
 // ----------------------------------------------
 // Globals
 // ----------------------------------------------
+html, body {
+  height: 100%;
+}
 
 // Handle Spanning App Full Window
 body {
-  display: flex;
-  flex-direction: column;
   height: 100%;
 
   & > .ember-view {
-    flex: 1;
+    min-height: 100%;
+    position: relative;
+
+    // Padding for Footer
+    padding-bottom: 150px;
   }
 }

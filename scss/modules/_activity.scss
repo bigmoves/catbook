@@ -42,7 +42,8 @@
 
 // Footer/Dis-Like
 // ----------------------------------------------
-.activity-item-footer {
+footer.activity-item-footer {
+  position: relative;
   font-size: $small-font-size;
   background: #fff;
   height: auto;
