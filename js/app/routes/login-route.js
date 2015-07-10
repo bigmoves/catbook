@@ -30,18 +30,54 @@ App.LoginRoute = Ember.Route.extend({
      */
     submit: function() {
 
-      var route = this,
+      var countdown,
+          authorize,
+          route = this,
           auth = this.get('auth'),
           controller = this.get('controller'),
           credentials = controller.getProperties('email', 'password');
 
-      auth.open(credentials).then(function() {
+      // Toggle loading display
+      $('.js-loader').toggleClass('active');
+      
+      // Ember timeout to ensure cool loading animation is displayed at least 2 sec.
+      countdown = function() {
+        return new Ember.RSVP.Promise(function(resolve, reject) {
+          Ember.run.later(this, function() {
+            resolve();
+          }, 2000);
+        });
+      };
 
+      // Authorization attempt
+      authorize = function() {
+        return new Ember.RSVP.Promise(function(resolve, reject) {
+
+          // Attempt to login the user
+          auth.open(credentials).then(function() {
+
+            // Login successful
+            resolve();
+          }, function() {
+
+            //Login Failed
+            reject();
+          });
+        });
+      };
+
+      // Promise resolution logic
+      Ember.RSVP.Promise.all([
+        countdown(),
+        authorize()
+      ]).then(function() {
+        
+        // Togle loading display and transition to index
+        $('.js-loader').toggleClass('active');
         route.transitionTo('index');
-
       }, function() {
 
-        controller.set('errors', 'Invalid email/password.');
+        // TODO: An error message saying you've been licking yourself too much should display to user.
       });
     }
   }
