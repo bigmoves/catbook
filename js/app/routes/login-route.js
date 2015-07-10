@@ -30,9 +30,8 @@ App.LoginRoute = Ember.Route.extend({
      */
     submit: function() {
 
-      var countdown,
-          authorize,
-          route = this,
+      var authorize = null,
+          countdown = null,
           auth = this.get('auth'),
           controller = this.get('controller'),
           credentials = controller.getProperties('email', 'password');
@@ -41,17 +40,17 @@ App.LoginRoute = Ember.Route.extend({
       $('.js-loader').toggleClass('active');
       
       // Ember timeout to ensure cool loading animation is displayed at least 2 sec.
-      countdown = function() {
-        return new Ember.RSVP.Promise(function(resolve, reject) {
+      countdown = new Ember.RSVP.Promise(function(resolve) {
+
           Ember.run.later(this, function() {
+
             resolve();
+
           }, 2000);
         });
-      };
 
       // Authorization attempt
-      authorize = function() {
-        return new Ember.RSVP.Promise(function(resolve, reject) {
+      authorize = new Ember.RSVP.Promise(function(resolve, reject) {
 
           // Attempt to login the user
           auth.open(credentials).then(function() {
@@ -64,18 +63,18 @@ App.LoginRoute = Ember.Route.extend({
             reject();
           });
         });
-      };
 
       // Promise resolution logic
       Ember.RSVP.Promise.all([
-        countdown(),
-        authorize()
+        countdown,
+        authorize
       ]).then(function() {
         
         // Togle loading display and transition to index
         $('.js-loader').toggleClass('active');
-        route.transitionTo('index');
-      }, function() {
+        this.transitionTo('index');
+
+      }.bind(this), function() {
 
         // TODO: An error message saying you've been licking yourself too much should display to user.
       });
