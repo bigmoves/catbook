@@ -88,7 +88,7 @@ App.AuthService = Ember.Service.extend({
             Ember.run.bind(null, resolve());
           });
         }
-      });
+      }, { remember: "sessionOnly" });
     });
   },
   /**
