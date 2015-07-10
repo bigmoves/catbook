@@ -30,8 +30,7 @@ App.AuthService = Ember.Service.extend({
    */
   createUser: function(user) {
 
-    var authService = this,
-        firebase = this.get('container').lookup('adapter:application').firebase;
+    var firebase = this.get('container').lookup('adapter:application').firebase;
 
     return new Ember.RSVP.Promise(function(resolve, reject) {
       firebase.createUser({
@@ -62,6 +61,9 @@ App.AuthService = Ember.Service.extend({
    * @memberof App.AuthService
    */
   open: function(credentials) {
+
+    // Debug
+    console.log('Logging in user');
 
     var authService = this,
         firebase = this.get('container').lookup('adapter:application').firebase,
@@ -97,6 +99,9 @@ App.AuthService = Ember.Service.extend({
    */
   fetch: function() {
 
+    // Debug
+    console.log('Fetching user');
+
     var authService = this,
         firebase = this.get('container').lookup('adapter:application').firebase,
         authData = firebase.getAuth(),
@@ -131,15 +136,18 @@ App.AuthService = Ember.Service.extend({
    */
   close: function() {
 
+    // Debug
+    console.log('Logging out user');
+
     var authService = this,
         firebase = this.get('container').lookup('adapter:application').firebase,
         store = this.get('container').lookup('store:main');
 
     return new  Ember.RSVP.Promise(function(resolve) {
-      store.unloadAll('user');
+      // store.unloadAll('user');
       firebase.unauth();
       authService.set('currentUser', null);
       resolve({});
-    })
+    });
   }
 });
