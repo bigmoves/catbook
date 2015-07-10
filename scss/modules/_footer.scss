@@ -1,3 +1,15 @@
+// ----------------------------------------------
+// Footer
+// ----------------------------------------------
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #333;
+  height: 150px;
+}
+
 .app-footer {
   text-align: left;
   margin: 0;
@@ -5,10 +17,4 @@
   font-family: "Indie Flower", cursive;
   font-size: 1.0rem;
   color: #fff;
-}
-
-footer {
-  width: 100%;
-  background: #333;
-  height: 150px;
 }
